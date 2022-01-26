@@ -126,7 +126,7 @@
 								</p>
 								<p class="header-intro-text wow fadeInUp pt-10" data-wow-duration=".6s" data-wow-delay=".8s">{{$home->short_description}}</p>
 								<div class="hro-btn wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".9s">
-									<a href="{{url($home->resume)}}" class="theme-btn">
+									<a href="{{url($home->resume)}}" class="theme-btn" target="_blank">
 										Download CV
 									</a>
 								</div>
@@ -988,6 +988,7 @@
 				</div>
 			</div> <!-- end container -->
 		</div>
+		</div>
 		<!-- End Blog -->
 	
 	<div class="clearfix"></div>
@@ -1143,7 +1144,5 @@
 	<script src="{{url('frontend/js/splitting.min.js')}} "></script>
 	<script src="{{url('frontend/js/YTPlayer.min.js')}} "></script>
 	<script src="{{url('frontend/js/main.js')}} "></script>
-
-	
-	</body>
+</body>
 </html>

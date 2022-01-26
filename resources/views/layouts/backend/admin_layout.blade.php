@@ -303,8 +303,8 @@
 
           <!-- Portfolio design  -->
           <li class="nav-item">
-            <a href="{{route('admin.service')}}" class="nav-link">
-              <i class="nav-icon fas fa-tasks"></i>
+            <a href="{{route('admin.portfolio')}}" class="nav-link">
+              <i class="nav-icon fas fa-images"></i>
               <p>
                 Portfolio
                 <i class="fas fa-angle-left right"></i>
@@ -312,13 +312,13 @@
             </a>
             <ul class="nav nav-treeview pl-4">
               <li class="nav-item">
-                <a href="{{route('admin.service.create')}}" class="nav-link">
+                <a href="{{route('admin.portfolio.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.service.list')}}" class="nav-link">
+                <a href="{{route('admin.portfolio.list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List</p>
                 </a>
@@ -328,7 +328,7 @@
 
           <!-- Testimonial design  -->
           <li class="nav-item">
-            <a href="{{route('admin.testimonial')}}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-id-card"></i>
               <p>
                 Testimonial
@@ -339,7 +339,7 @@
 
           <!-- Blog design  -->
           <li class="nav-item">
-            <a href="{{route('admin.blog')}}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Blog

@@ -200,7 +200,7 @@ label {
     background: #555;
     color: #fff;
     text-shadow: none;
-}
+} 
 
 *::-moz-placeholder {
     color: #999;
@@ -762,7 +762,7 @@ p.copyright {
 }
 
 .de-padding {
-    /* padding: 10rem 0; */
+    padding: 6rem 0;
 }
 
 .de-pt {
