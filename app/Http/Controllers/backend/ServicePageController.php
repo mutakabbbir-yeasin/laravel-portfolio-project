@@ -59,7 +59,7 @@ class ServicePageController extends Controller
         
         return redirect()-> route('admin.service.create')->with('success','New Service has been created successfully, Alhamdulillah');
 
-}
+    }
 
     /**
      * Display the specified resource.
@@ -98,7 +98,7 @@ class ServicePageController extends Controller
             'title' => 'required| string',
             'description' => 'required| string'
         ]);
-
+ 
         $service = Service::find($id);
         $service->icon = $request->icon;
         $service->title = $request->title;
@@ -121,6 +121,5 @@ class ServicePageController extends Controller
         $service-> delete();
 
         return redirect()-> route('admin.service.list')->with('success','Service has been deleted successfully, Alhamdulillah');
-
     }
 }

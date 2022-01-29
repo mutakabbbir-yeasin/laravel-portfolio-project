@@ -53,7 +53,7 @@ Route::prefix('admin')->group(function(){
 
     Route::get('/portfolio', [PortfolioPageController::class, 'index'])->name('admin.portfolio');
     Route::get('/portfolio/create', [PortfolioPageController::class, 'create'])->name('admin.portfolio.create');
-    Route::post('/portfolio/create', [PortfolioPageController::class, 'store'])->name('admin.portfolio.store'); 
+    Route::put('/portfolio/create', [PortfolioPageController::class, 'store'])->name('admin.portfolio.store'); // jehetu image niye kaj korchi tai put method hobe
     Route::get('/portfolio/list', [PortfolioPageController::class, 'list'])->name('admin.portfolio.list'); 
     Route::get('/portfolio/edit/{id}', [PortfolioPageController::class, 'edit'])->name('admin.portfolio.edit'); 
     Route::post('/portfolio/update/{id}', [PortfolioPageController::class, 'update'])->name('admin.portfolio.update');

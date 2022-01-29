@@ -24,17 +24,23 @@
       @csrf
       {{method_field('PUT')}}
       <div class="row">
-        <div class="form-group col-md-5 mt-3">
-          <h3>Big Image</h3>
-          <img style="height: 35vh" src="" alt="img" class="img-thumbnail">
-          <input class="mt-3" type="file" name="big_image">
-        </div>
-        <div class="form-group col-md-5 mt-3">
-          <h3>Small Image</h3>
-          <img style="height: 20vh" src="" alt="img" class="img-thumbnail">
-          <input class="mt-3" type="file" name="small_image">
-        </div>
-        <div class="form-group col-md-6">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="form-group  mt-3">
+              <h3>Big Image</h3>
+              <img style="height: 35vh" src="{{url('frontend/img/portfolio/6.jpg')}}" alt="img" class="img-thumbnail">
+              <input class="mt-3" type="file" name="big_image">
+            </div>
+            <div class="form-group  mt-3">
+              <h3>Small Image</h3>
+              <img style="height: 20vh" src="{{url('frontend/img/profile-avatar.jpg')}}" alt="img" class="img-thumbnail">
+              <input class="mt-3" type="file" name="small_image">
+            </div>
+          </div>
+        
+      </div>
+      <div class="col-md-7">
+        <div class="form-group ">
           <div class="mb-3">
             <label for="name"><h5>Title</h5></label>
             <input type="text" class="form-control" name="title" value="">
@@ -53,8 +59,9 @@
             <label for="name"><h5>Client</h5></label>
             <input type="text" class="form-control" name="client" value="">
           </div>
-          <input type="submit" name="submit" class="btn btn-primary mt-3 px-5" value="Upload">
         </div>
+        </div>
+        <input type="submit" name="submit" class="btn btn-primary m-5 px-5" value="Upload">
       </div>
     </form>
   </div>

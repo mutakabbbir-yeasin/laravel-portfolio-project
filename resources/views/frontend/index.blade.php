@@ -627,9 +627,8 @@
 			<div class="col-md-7"><!-- start col-7 -->
 				<ul class="col list-unstyled list-inline mb-0 text-uppercase work_menu mt-50" id="menu-filter">
 					<li class="list-inline-item"><a class="active" data-filter="*">All</a></li>
-					<li class="list-inline-item"><a class="" data-filter=".seo">UI/UX</a></li>
-					<li class="list-inline-item"><a class="" data-filter=".webdesign">Branding</a></li>
-					<li class="list-inline-item"><a class="" data-filter=".work">Design</a></li>
+					<li class="list-inline-item"><a class="" data-filter=".webdesign">Web Design</a></li>
+					<li class="list-inline-item"><a class="" data-filter=".webdevelopment">Web Development</a></li>
 					<li class="list-inline-item"><a class="" data-filter=".wordpress">Wordpress</a></li>
 				</ul>			
 			</div><!-- end col-7 -->
@@ -638,90 +637,85 @@
 			<div class="col-md-12"> <!-- start col-9 -->
 				<div class="container portfolio-container"> <!-- container -->
 					<div class="row work-filter">
-						<div class="col-md-4 work_item work wordpress">
-							<a href="{{url('frontend/img/portfolio/1.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/1.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
+						@if(is_countable($portfolio) && count($portfolio) > 0 )
+							@foreach ($portfolio as $portfolio)
+							<div class="col-md-4 work_item work <?php echo $portfolio->catagory; ?>">
+								<a class="portfolio-link" data-toggle="modal" href="#portfolioModal" class="img-zoom">
+									<div class="work_box">
+										<div class="work_img">
+											<img src="{{url($portfolio->small_image)}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
+										</div>
+										<div class="work_detail">
+											<p class="mb-2">{{$portfolio->catagory}}</p>
+											<h4 class="mb-0">{{$portfolio->title}}</h4>
+										</div>
 									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
-						<div class="col-md-4 work_item webdesign wordpress">
-							<a href="{{url('frontend/img/portfolio/2.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/2.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
-									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
-						<div class="col-md-4 work_item webdesign seo wordpress">
-							<a href="{{url('frontend/img/portfolio/3.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/3.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
-									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
-						<div class="col-md-4 work_item work wordpress">
-							<a href="{{url('frontend/img/portfolio/4.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/4.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
-									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
-						<div class="col-md-4 work_item webdesign wordpress">
-							<a href="{{url('frontend/img/portfolio/5.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/5.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
-									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
-						<div class="col-md-4 work_item webdesign seo wordpress">
-							<a href="{{url('frontend/img/portfolio/6.jpg')}}" class="img-zoom">
-								<div class="work_box">
-									<div class="work_img">
-										<img src="{{url('frontend/img/portfolio/6.jpg')}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
-									</div>
-									<div class="work_detail">
-										<p class="mb-2">Category</p>
-										<h4 class="mb-0">Project Title</h4>
-									</div>
-								</div>
-							</a>
-						</div> <!-- end col-4 -->
+								</a>
+							</div> <!-- end col-4 -->
+							@endforeach
+						@endif
+
+						
+						{{-- @if(is_countable($portfolio) && count($portfolio) > 0 )
+                        @foreach ($portfolios as $portfolio)
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <div class="portfolio-item">
+                                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal<?php echo $portfolio->id?>">
+                                        <div class="portfolio-hover">
+                                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                        </div>
+                                        <img class="img-fluid" src="{{url($portfolio->small_image)}}" alt="" />
+                                    </a>
+                                    <div class="portfolio-caption">
+                                        <div class="portfolio-caption-heading">{{$portfolio->client}}</div>
+                                        <div class="portfolio-caption-subheading text-muted">{{$portfolio->category}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif --}}
+						
 					</div>
 				</div> <!-- end container -->
 			</div><!-- start col-9 -->
 		</div><!-- end row -->	
 	</div><!-- end container -->
 </section>	<!-- End Project Area -->
+
+<!-- Portfolio Modals-->
+        <!-- Modal -->
+        @if (is_countable($portfolio) && count($portfolio) > 0)
+        @foreach ($portfolio as $portfolio)
+        <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">{{$portfolio->title}}</h2>
+                                    <img class="img-fluid d-block mx-auto" src="{{url($portfolio->big_image)}}" alt="big_image" />
+                                    <p>{{$portfolio->description}}</p>
+                                    <ul class="list-inline">
+                                        <li>Date: {{$portfolio->created_at->toDateString()}}</li>
+                                        <li>Client: {{$portfolio->client}}</li>
+                                        <li>Category: {{$portfolio->category}}</li>
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @endif 
 		
 	<!-- Start Feedback
 	============================================= -->
@@ -1112,6 +1106,11 @@
 	<!-- End Footer-->	
 	</main>		
 </div>	
+
+
+
+	
+
 	<!-- Start Scroll top
 	============================================= -->
 	<a href="#home" id="scrtop" class="smooth-scroll"><i class="icofont-rounded-up"></i></a>

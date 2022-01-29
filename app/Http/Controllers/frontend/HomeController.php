@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Home;
 use App\Models\About;
 use App\Models\Service;
+use App\Models\Portfolio;
 use App\Models\Faq;
 
 class HomeController extends Controller
@@ -15,8 +16,9 @@ class HomeController extends Controller
         $home = Home::first();
         $about = About::first();
         $service = Service::all();
+        $portfolio = Portfolio::all();
         $faq = Faq::all();
-        return view('frontend.index', compact('home','service','about','faq'));
+        return view('frontend.index', compact('home','service','portfolio','about','faq'));
     } 
 } 
 
