@@ -114,7 +114,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
@@ -126,7 +126,8 @@ insert  into `migrations`(`id`,`migration`,`batch`) values
 (5,'2022_01_13_053828_create_homes_table',2),
 (6,'2022_01_14_190803_create_services_table',3),
 (7,'2022_01_16_184137_create_abouts_table',4),
-(8,'2022_01_17_065719_create_faqs_table',5);
+(8,'2022_01_17_065719_create_faqs_table',5),
+(9,'2022_01_26_174939_create_portfolios_table',6);
 
 /*Table structure for table `password_resets` */
 
@@ -162,6 +163,29 @@ CREATE TABLE `personal_access_tokens` (
 
 /*Data for the table `personal_access_tokens` */
 
+/*Table structure for table `portfolios` */
+
+DROP TABLE IF EXISTS `portfolios`;
+
+CREATE TABLE `portfolios` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `catagory` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `big_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `small_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `client` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `portfolios` */
+
+insert  into `portfolios`(`id`,`title`,`catagory`,`big_image`,`small_image`,`description`,`client`,`created_at`,`updated_at`) values 
+(4,'Portfolio Website','Web Design','storage/img/06YbvnZKmDYXOS0etYiUhb3dW5qltg9Vb2vyX48q.png','storage/img/HNv5YHLP6ESje4Q67V4Q8QLtEoyL83hxXTdEpGcj.png','<p>Beautiful website</p>','Themezone Academy','2022-01-28 19:19:50','2022-01-29 08:08:21'),
+(5,'Graphics','Graphics Design','storage/img/c8BqlERryWb6AMvAyvopqpqWqtKtVOcRkZJqmQag.png','storage/img/sKBzRT8s6nhXh5BVaRhrJe3KL05dOmiwrXh5vPuC.png','<p>sdjfhc</p>','ABC','2022-01-31 18:27:08','2022-01-31 18:27:08');
+
 /*Table structure for table `services` */
 
 DROP TABLE IF EXISTS `services`;
@@ -174,13 +198,14 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `services` */
 
 insert  into `services`(`id`,`icon`,`title`,`description`,`created_at`,`updated_at`) values 
 (5,'icofont-ship-wheel','Graphic Design Advance','1. Advance Design \r\n2. Advance Email Signature \r\n3. Social Media Banner','2022-01-16 07:16:50','2022-01-16 08:12:55'),
-(6,'icofont-ui-theme','WordPress','1. PSD to WP  \r\n2. Woocommerce  \r\n3.  Speed Optimization','2022-01-17 08:02:52','2022-01-17 08:02:52');
+(6,'icofont-ui-theme','WordPress','1. PSD to WP  \r\n2. Woocommerce  \r\n3.  Speed Optimization','2022-01-17 08:02:52','2022-01-17 08:02:52'),
+(7,'dfsd','ddsf','<ol>\r\n<li>1. sdhg</li>\r\n<li>2. d;sk.fj</li>\r\n<li>3. sdfjn</li>\r\n</ol>','2022-01-22 18:32:43','2022-01-22 18:38:22');
 
 /*Table structure for table `users` */
 
