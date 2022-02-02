@@ -9,6 +9,16 @@ use App\Models\Faq;
 class FaqPageController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -47,9 +57,6 @@ class FaqPageController extends Controller
 
         $faq->save();
         return redirect()->route('admin.faq.create')->with('success', 'FAQ has been created successfully, Alhsmdulillah');
-
-
-
 
     }
 

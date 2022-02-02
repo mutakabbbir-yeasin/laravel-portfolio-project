@@ -33,7 +33,7 @@ Route::prefix('admin')->group(function(){
     Route::put('/home', [HomePageController::class, 'update'])->name('admin.home.update'); //data pathanor jonno put method use kora hoyeche
 
     Route::get('/about', [AboutPageController::class, 'index'])->name('admin.about'); 
-    Route::put('/admin/about', [AboutPageController::class, 'update'])->name('admin.about.update'); 
+    Route::put('/about', [AboutPageController::class, 'update'])->name('admin.about.update'); 
 
     Route::get('/faq', [FaqPageController::class, 'create'])->name('admin.faq'); 
     Route::get('/faq/create', [FaqPageController::class, 'create'])->name('admin.faq.create'); 

@@ -640,7 +640,7 @@
 						@if(is_countable($portfolio) && count($portfolio) > 0 )
 							@foreach ($portfolio as $portfolio)
 							<div class="col-md-4 work_item work portfolio-item ">
-								<a class="portfolio-link" data-toggle="modal" href="#portfolioModal<?php echo $portfolio->id?>" class="img-zoom">
+								<a class="portfolio-link" data-toggle="modal" data-bs-target="#portfolioModal<?php echo $portfolio->id ?>" href="#portfolioModal<?php echo $portfolio->id ?>">
 									<div class="work_box">
 										<div class="work_img">
 											<img src="{{url($portfolio->small_image)}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
@@ -651,6 +651,17 @@
 										</div>
 									</div>
 								</a>
+								{{-- <a class="portfolio-link" data-toggle="modal" data-target="#portfolioModal<?php echo $portfolio->id ?>">
+									<div class="work_box">
+										<div class="work_img">
+											<img src="{{url($portfolio->small_image)}}" class="img-fluid mx-auto d-block rounded" alt="work-img">
+										</div>
+										<div class="work_detail">
+											<p class="mb-2">{{$portfolio->catagory}}</p>
+											<h4 class="mb-0">{{$portfolio->title}}</h4>
+										</div>
+									</div>
+								</a> --}}
 							</div> <!-- end col-4 -->
 							@endforeach
 						@endif
@@ -665,7 +676,7 @@
         <!-- Modal -->
         @if (is_countable($portfolio) && count($portfolio) > 0)
         @foreach ($portfolio as $portfolio)
-		<div class="modal fade" id="portfolioModal<?php echo $portfolio->id?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="portfolioModal<?php echo $portfolio->id ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 			  <div class="modal-content">
 				<div class="modal-header">
@@ -697,6 +708,38 @@
 		  </div>
         @endforeach
         @endif 
+
+
+		{{-- <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+	Launch static backdrop modal
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog .modal-dialog-scrollable">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+  
+			<img class="justify-content-centre" src="asset/img/abc.png" height=300px; width=400px>
+		  <p>What is Lorem Ipsum?
+	  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  
+	  Why do we use it?
+	  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Understood</button>
+		</div>
+	  </div>
+	</div>
+  </div> --}}
+  
 
 	<!-- Start Feedback
 	============================================= -->

@@ -2124,7 +2124,7 @@ ul.blog-meta li i {
     font-size: 14px;
 }
 
-.work_box:hover .work_detail {
+.work_box:hover .work_detail{
     top: 50%;
     transform: translate(0, -50%);
     opacity: 1;
